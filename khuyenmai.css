@@ -1,0 +1,206 @@
+/* ======================= TOÀN TRANG ======================= */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fff;
+    color: #111;
+}
+
+/* ======================= HEADER ======================= */
+.header {
+    background-color: #111;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 50px;
+}
+
+.logo {
+    font-size: 28px;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.logo span {
+    color: #f9d342;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+
+.navbar a:hover, 
+.navbar a.active {
+    color: #f9d342;
+}
+
+/* ======================= PHẦN KHUYẾN MÃI ======================= */
+.khuyenmai {
+    text-align: center;
+    padding: 10rem 2rem;
+    background-color: #000;
+}
+
+.khuyenmai h1 {
+    font-size: 3.5rem;
+    color: #fffacd; /* trắng vàng nhạt */
+    text-shadow: 0 0 15px rgba(255, 200, 100, 0.8); /* Hiệu ứng sáng */
+    margin-bottom: 4rem;
+}
+
+/* ======================= SẢN PHẨM ======================= */
+.product-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.product {
+    background-color: #111;
+    color: white;
+    border-radius: 12px;
+    width: 280px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.6);
+}
+
+.product h3 {
+    margin: 15px 0 5px;
+    color: #FFD700;
+}
+
+.product p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #fffacd;
+}
+
+.product button {
+    background-color: transparent; /* Nền trong suốt */
+    border: 2px solid #FFD700;     /* Viền vàng */
+    color: #FFD700;                /* Chữ vàng */
+    padding: 10px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.8); /* ánh sáng chữ */
+    transition: all 0.3s ease;
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+}
+
+.product button:hover {
+    background-color: #FFD700;  /* nền vàng khi hover */
+    color: #111;                /* chữ đen nổi bật */
+    box-shadow: 0 0 25px rgba(255, 230, 150, 1);
+    transform: scale(1.05);
+}
+
+/* ======================= ƯU ĐÃI ĐỘC QUYỀN ======================= */
+.exclusive-offer {
+    background-color: #000;
+    color: #fffacd;
+    text-align: center;
+    padding: 4rem 2rem;
+    border-top: 2px solid #FFD700;
+    border-bottom: 2px solid #FFD700;
+}
+
+.exclusive-offer h2 {
+    font-size: 2.8rem;
+    text-shadow: 0 0 12px rgba(255, 215, 0, 0.8);
+    margin-bottom: 1rem;
+}
+
+.exclusive-offer p {
+    font-size: 1.3rem;
+    color: #ddd;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ======================= VOUCHER SECTION ======================= */
+.voucher-section {
+    background: linear-gradient(180deg, #111, #222);
+    color: #FFD700;
+    text-align: center;
+    padding: 60px 20px;
+    border-top: 2px solid #FFD700;
+    border-bottom: 2px solid #FFD700;
+}
+
+.voucher-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+}
+
+.voucher-section p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    color: #fffacd;
+}
+
+.voucher-form input[type="email"] {
+    padding: 10px 15px;
+    width: 280px;
+    border: 2px solid #FFD700;
+    border-radius: 25px;
+    outline: none;
+    background-color: #000;
+    color: #fff;
+}
+
+.voucher-form button {
+    background-color: #FFD700;
+    border: none;
+    color: #111;
+    padding: 10px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+
+.voucher-form button:hover {
+    background-color: #fff8e1;
+    color: #111;
+    box-shadow: 0 0 25px rgba(255, 230, 150, 1);
+    transform: scale(1.05);
+}
+
+/* ======================= FOOTER ======================= */
+footer {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 50px;
+}

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FE CREADIT - Hỗ Trợ Tài Chính Nhanh</title>
+    <style>
+        :root {
+            --primary-color: #2ecc71;
+            --secondary-color: #27ae60;
+            --dark-color: #2c3e50;
+            --light-color: #f8f9fa;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #eef2f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .app-container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 450px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+        }
+
+        .form-body {
+            padding: 25px 20px;
+        }
+
+        .welcome-text {
+            color: var(--dark-color);
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 18px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 6px;
+            color: #666;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .input-group input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 5px rgba(46, 204, 113, 0.3);
+        }
+
+        .row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .row .input-group {
+            flex: 1;
+        }
+
+        .info-box {
+            background-color: #fff9db;
+            border-left: 4px solid #f59f00;
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.1s, opacity 0.3s;
+            box-shadow: 0 4px 10px rgba(46, 204, 113, 0.4);
+        }
+
+        .btn-submit:active {
+            transform: scale(0.98);
+        }
+
+        /* Popup thông báo kết quả troll */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+            z-index: 999;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .popup {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            transform: scale(0.7);
+            transition: transform 0.3s ease;
+        }
+
+        .overlay.active .popup {
+            transform: scale(1);
+        }
+
+        .popup-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .popup-title {
+            font-size: 20px;
+            color: #e74c3c;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .popup-msg {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .btn-close {
+            background: #34495e;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        <div class="header">
+            <span class="badge">Doanh nghiệp uy tín</span>
+            <h1>FE CREADIT</h1>
+            <p>Hệ thống duyệt vay tự động trong 30 giây</p>
+        </div>
+
+        <div class="form-body">
+            <div class="welcome-text">ĐĂNG KÝ HỒ SƠ VAY TỐC HÀNH</div>
+            
+            <form id="loanForm" onsubmit="handleLoanSubmit(event)">
+                <div class="input-group">
+                    <label for="fullName">HỌ VÀ TÊN (In hoa có dấu)</label>
+                    <input type="text" id="fullName" placeholder="Ví dụ: NGUYỄN VĂN A" required autocomplete="off">
+                </div>
+
+                <div class="input-group">
+                    <label for="phone">SỐ ĐIỆN THOẠI ĐĂNG KÝ</label>
+                    <input type="tel" id="phone" placeholder="Ví dụ: 0912345678" pattern="[0-9]{10}" title="Vui lòng nhập đúng 10 số điện thoại" required>
+                </div>
+
+                <div class="row">
+                    <div class="input-group">
+                        <label for="studentId">MÃ SỐ SINH VIÊN</label>
+                        <input type="text" id="studentId" placeholder="Nhập MSSV" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="cccd">SỐ CCCD (12 số)</label>
+                        <input type="text" id="cccd" placeholder="Số CCCD" pattern="[0-9]{12}" title="Vui lòng nhập đúng 12 số CCCD" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="amount">KHOẢN VAY MONG MUỐN</label>
+                    <select id="amount">
+                        <option value="5.000.000">5.000.000 VNĐ (Lãi suất 0%)</option>
+                        <option value="10.000.000">10.000.000 VNĐ (Sinh viên ưu đãi)</option>
+                        <option value="20.000.000">20.000.000 VNĐ (Hot)</option>
+                        <option value="50.000.000">50.000.000 VNĐ (Xét duyệt nhanh)</option>
+                    </select>
+                </div>
+
+                <div class="info-box">
+                    (*) Bằng việc nhấn "Đăng ký nhận tiền", bạn đã đồng ý thế chấp danh dự sinh viên và cam kết trả nợ đúng hạn (bao gồm cả tiền gốc, tiền lãi và tiền trà sữa cho người gửi link này).
+                </div>
+
+                <button type="submit" class="btn-submit">ĐĂNG KÝ NHẬN TIỀN NGAY</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="overlay" id="popupOverlay">
+        <div class="popup">
+            <div class="popup-icon">💸</div>
+            <div class="popup-title">ĐĂNG KÝ THÀNH CÔNG!</div>
+            <div class="popup-msg" id="popupMessage">
+                </div>
+            <button class="btn-close" onclick="closePopup()">Đóng thông báo</button>
+        </div>
+    </div>
+
+    <script>
+        function handleLoanSubmit(event) {
+            event.preventDefault(); // Ngăn load lại trang
+            
+            // Lấy dữ liệu người dùng nhập để chèn vào câu troll
+            const name = document.getElementById('fullName').value.toUpperCase();
+            const amount = document.getElementById('amount').value;
+            const studentId = document.getElementById('studentId').value;
+
+            const msg = `Chúc mừng sinh viên <b>${name}</b> (MSSV: ${studentId}) đã đăng ký thành công khoản vay <b>${amount} VNĐ</b>.<br><br>
+            Hồ sơ đang được chuyển tiền vào tài khoản 054********** Ngân Hàng Viettinbank </i>`;
+
+            document.getElementById('popupMessage').innerHTML = msg;
+            document.getElementById('popupOverlay').classList.add('active');
+        }
+
+        function closePopup() {
+            document.getElementById('popupOverlay').classList.remove('active');
+        }
+    </script>
+</body>
+</html>

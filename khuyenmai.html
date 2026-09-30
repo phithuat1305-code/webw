@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Gấu Trắng - Khuyến Mãi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="khuyenmai.css">
+    <style>
+    
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Phần thu thập voucher */
+        .voucher-section {
+            background: linear-gradient(180deg, #111, #222);
+            color: #FFD700;
+            text-align: center;
+            padding: 60px 20px;
+            margin-top: 4rem;
+            border-top: 2px solid #FFD700;
+            border-bottom: 2px solid #FFD700;
+        }
+
+        .voucher-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+        }
+
+        .voucher-section p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            color: #fffacd;
+        }
+
+        .voucher-form input[type="email"] {
+            padding: 10px 15px;
+            width: 280px;
+            border: 2px solid #FFD700;
+            border-radius: 25px;
+            outline: none;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .voucher-form button {
+            background-color: #FFD700;
+            border: none;
+            color: #111;
+            padding: 10px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 10px;
+            transition: 0.3s;
+        }
+
+        .voucher-form button:hover {
+            background-color: #fff8e1;
+            color: #111;
+            box-shadow: 0 0 25px rgba(255, 230, 150, 1);
+            transform: scale(1.05);
+        }
+
+        /* Ưu đãi độc quyền */
+        .exclusive-offer {
+            background-color: #000;
+            color: #fffacd;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .exclusive-offer h2 {
+            font-size: 2.8rem;
+            text-shadow: 0 0 12px rgba(255, 215, 0, 0.8);
+            margin-bottom: 1rem;
+        }
+
+        .exclusive-offer p {
+            font-size: 1.3rem;
+            color: #ddd;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index2.html" class="logo">
+            <img src="logo.png" alt="Logo Gấu Trắng" class="logo-icon"> 
+            Cafe <span>Gấu Trắng</span>
+        </a>
+        <nav class="navbar">
+            <a href="menu.html">Menu</a>
+            <a href="khuyenmai.html" class="active">Khuyến Mãi</a>
+            <a href="thuonghieu.html">Thương Hiệu</a>
+            <a href="dangnhap.html">Đăng Nhập</a>
+        </nav>
+    </header>
+
+    <section class="khuyenmai">
+        <h1>🎉 Ưu Đãi Đặc Biệt & Khuyến Mãi Trung Thu 🎑 🎉</h1>
+        <div class="product-container">
+            <div class="product">
+                <img src="https://lh6.googleusercontent.com/proxy/LcrQvf5VlPKjyIVgH6UUURhh9HPOorCMbr091cGQwkF78pqw6TtPnLT1zlsPJA87rvAxSrntSrJhT6F2u_O6N3i2pK4y32kEZ7cvDpHA9DwHhvnLNozl_5EPfQzpwpgVHbaMky5_rdUqjAzGmGNY6VYeZDhmFDfDpk8d20z8Q9bX-OYGaTeiXuiaA4M" alt="Cà phê sữa đá"> 
+                <h3>Cà phê sữa đá</h3>
+                <p>Giảm 30% cho ly thứ 2!</p>
+                <button>Mua Ngay</button>
+            </div>
+
+            <div class="product">
+                <img src="https://lypham.vn/wp-content/uploads/2024/09/cach-lam-bac-xiu-da.jpg" alt="Bạc xỉu">
+                <h3>Bạc xỉu</h3>
+                <p>Mua 1 tặng 1 vào Thứ 7 hàng tuần!</p>
+                <button>Mua Ngay</button>
+            </div>
+
+            <div class="product">
+                <img src="https://madg.vn/wp-content/uploads/2024/11/cach-lam-tra-sua-hokkaido-09-min.jpg" alt="Trà sữa Gấu Trắng">
+                <h3>Trà sữa Gấu Trắng</h3>
+                <p>Giảm 20% khi đặt hàng online!</p>
+                <button>Mua Ngay</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ưu đãi độc quyền -->
+    <section class="exclusive-offer">
+        <h2>🌟 Ưu Đãi Độc Quyền Online 🌟</h2>
+        <p>Chỉ áp dụng khi đặt hàng trên website! Giảm thêm 10% cho đơn từ 100.000đ — chỉ trong dịp Trung Thu này 🎑</p>
+    </section>
+
+    <!-- Thu thập voucher -->
+    <section class="voucher-section">
+        <h2>🎁 Thu Thập Voucher Ngay! 🎁</h2>
+        <p>Nhập email để nhận mã giảm giá độc quyền từ Cafe Gấu Trắng 💌</p>
+        <form class="voucher-form">
+            <input type="email" placeholder="Nhập email của bạn..." required>
+            <button>Nhận Voucher</button>
+        </form>
+    </section>
+
+      <!-- Footer -->
+    <footer class="footer" id="about">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Địa Chỉ</h3>
+                <p>123 Đường Cà Phê, Quận 1, TP. Hồ Chí Minh, Việt Nam </p>
+                <img src="/15.png" alt="" class="map-image"> <!-- Giả sử có file map.png -->
+            </div>
+            <div class="footer-column">
+                <h3>Thời Gian Hoạt Động</h3>
+                <p>7:00 AM - 10:00 PM</p>
+                <p>Tất cả các ngày trong tuần</p>
+            </div>
+            <div class="footer-column">
+                <h3>Thương Hiệu</h3>
+                <p>Tìm hiểu về chúng tôi</p>
+                <a href="thuonghieu.html">Chi tiết</a>
+            </div>
+            <div class="footer-column">
+                <h3>Liên Hệ</h3>
+                <p>Email: contact@cafegautrang.com</p>
+                <p>Điện thoại: +84 123 456 789</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script for mobile menu toggle (if needed)
+        const menuIcon = document.getElementById('menu-icon');
+        const navbar = document.querySelector('.navbar');
+
+        menuIcon.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+</body>
+</html>
